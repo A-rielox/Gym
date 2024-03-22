@@ -1,0 +1,53 @@
+<!-- <div class="field"> -->
+<div>
+   <!-- <span class="p-float-label"> -->
+   <span>
+      <input
+         id="{{ label }}"
+         type="{{ type }}"
+         pInputText
+         class="w-full p-inputtext-sm"
+         placeholder="{{ label }}"
+         [formControl]="control"
+      />
+
+      <!-- <label for="{{ label }}">{{ label }}</label> -->
+   </span>
+
+   <ng-container *ngIf="control.touched && control.errors && control.dirty">
+      <small
+         *ngIf="control.errors?.['required']"
+         id="{{ label }}-help"
+         class="p-error block"
+      >
+         Por favor ingrese un {{ label === "Ciudad" ? "a" : "" }}
+         {{ label | lowercase }}.</small
+      >
+
+      <small
+         *ngIf="control.errors?.['minlength']"
+         id="{{ label }}-help"
+         class="p-error block"
+      >
+         {{ label }} debe tener al menos
+         {{ control.errors["minlength"].requiredLength }} caracteres.</small
+      >
+
+      <small
+         *ngIf="control.errors?.['maxlength']"
+         id="{{ label }}-help"
+         class="p-error block"
+      >
+         {{ label }} debe ser máximo
+         {{ control.errors["maxlength"].requiredLength }} caracteres.</small
+      >
+
+      <small
+         *ngIf="control.errors?.['notMatching']"
+         id="{{ label }}-help"
+         class="p-error block"
+      >
+         Los passwords no coinciden</small
+      >
+   </ng-container>
+</div>

@@ -1,0 +1,8 @@
+a {
+   text-decoration: none;
+}
+
+.active span {
+   color: rgb(152, 53, 223);
+   font-size: 110%;
+}

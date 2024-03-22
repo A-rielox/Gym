@@ -1,0 +1,9 @@
+a {
+   text-decoration: none;
+}
+
+.active span,
+.active i {
+   color: #14b8a6;
+   font-size: 110%;
+}

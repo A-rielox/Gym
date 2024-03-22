@@ -1,0 +1,363 @@
+<div class="min-h-screen flex surface-ground">
+   <!-- ============================ barra lateral ============================ -->
+   <div
+      id="app-sidebar-11"
+      class="surface-section h-screen hidden lg:block flex-shrink-0 fixed lg:sticky left-0 top-0 z-1 border-right-1 surface-border select-none"
+      style="width: 280px"
+   >
+      <div class="flex flex-column h-full">
+         <div
+            class="flex align-items-center px-5 flex-shrink-0"
+            style="height: 60px"
+         >
+            <img src="assets/images/gym.jpg" alt="Image" height="70" />
+         </div>
+         <div class="overflow-y-auto">
+            <ul class="list-none p-3 m-0">
+               <li>
+                  <div
+                     class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer"
+                     pStyleClass="@next"
+                     enterClass="hidden"
+                     enterActiveClass="slidedown"
+                     leaveToClass="hidden"
+                     leaveActiveClass="slideup"
+                  >
+                     <span class="font-medium">Favoritos</span>
+                     <i class="pi pi-chevron-down"></i>
+                  </div>
+
+                  <ul class="list-none p-0 m-0 overflow-hidden">
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                           routerLink="/"
+                           routerLinkActive="active"
+                           [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                           <i class="pi pi-home mr-2 text-indigo-500"></i>
+                           <span class="font-medium">Home</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                           routerLink="/clases"
+                           routerLinkActive="active"
+                        >
+                           <i class="pi pi-bookmark mr-2 text-blue-500"></i>
+                           <span class="font-medium">Clases</span>
+                        </a>
+                     </li>
+
+                     <!-- drop down -->
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                           pStyleClass="@next"
+                           enterClass="hidden"
+                           enterActiveClass="slidedown"
+                           leaveToClass="hidden"
+                           leaveActiveClass="slideup"
+                        >
+                           <i class="pi pi-chart-line mr-2 text-purple-500"></i>
+                           <span class="font-medium">Reports</span>
+                           <i class="pi pi-chevron-down ml-auto"></i>
+                        </a>
+                        <ul [class]="dropDownUlClass()">
+                           <li>
+                              <a
+                                 [class]="favoritosMainLinkClass()"
+                                 style="border-radius: 12px"
+                                 pStyleClass="@next"
+                                 enterClass="hidden"
+                                 enterActiveClass="slidedown"
+                                 leaveToClass="hidden"
+                                 leaveActiveClass="slideup"
+                              >
+                                 <i
+                                    class="pi pi-chart-line mr-2 text-purple-500"
+                                 ></i>
+                                 <span class="font-medium">Revenue</span>
+                                 <i class="pi pi-chevron-down ml-auto"></i>
+                              </a>
+                              <ul [class]="dropDownUlClass()">
+                                 <li>
+                                    <a
+                                       [class]="favoritosMainLinkClass()"
+                                       style="border-radius: 12px"
+                                    >
+                                       <i
+                                          class="pi pi-table text-purple-500 mr-2"
+                                       ></i>
+                                       <span class="font-medium">View</span>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a
+                                       [class]="favoritosMainLinkClass()"
+                                       style="border-radius: 12px"
+                                    >
+                                       <i
+                                          class="pi pi-search mr-2 text-purple-500"
+                                       ></i>
+                                       <span class="font-medium">Search</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <a
+                                 [class]="favoritosMainLinkClass()"
+                                 style="border-radius: 12px"
+                              >
+                                 <i
+                                    class="pi pi-chart-line mr-2 text-purple-500"
+                                 ></i>
+                                 <span class="font-medium">Expenses</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-users mr-2 text-green-500"></i>
+                           <span class="font-medium">Team</span>
+                        </a>
+                     </li>
+
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-comments mr-2 text-cyan-500"></i>
+                           <span class="font-medium">Messages</span>
+                           <span
+                              class="inline-flex align-items-center justify-content-center ml-auto bg-indigo-500 text-0 border-circle"
+                              style="min-width: 1.5rem; height: 1.5rem"
+                              >3</span
+                           >
+                        </a>
+                     </li>
+
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-calendar mr-2 text-teal-500"></i>
+                           <span class="font-medium">Calendar</span>
+                        </a>
+                     </li>
+
+                     <li>
+                        <a
+                           [class]="favoritosMainLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-cog mr-2 text-pink-500"></i>
+                           <span class="font-medium">Settings</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+
+            <ul class="list-none p-3 m-0">
+               <li>
+                  <div
+                     class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer"
+                     pStyleClass="@next"
+                     enterClass="hidden"
+                     enterActiveClass="slidedown"
+                     leaveToClass="hidden"
+                     leaveActiveClass="slideup"
+                  >
+                     <span class="font-medium">Otros</span>
+                     <i class="pi pi-chevron-down"></i>
+                  </div>
+                  <ul class="list-none p-0 m-0 overflow-hidden">
+                     <li>
+                        <a
+                           [class]="applicationsLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-discord mr-2 text-cyan-500"></i>
+                           <span class="font-medium">Discord</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a
+                           [class]="applicationsLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-slack mr-2 text-purple-500"></i>
+                           <span class="font-medium">Slack</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a
+                           [class]="applicationsLinkClass()"
+                           style="border-radius: 12px"
+                        >
+                           <i class="pi pi-github mr-2 text-blue-500"></i>
+                           <span class="font-medium">GitHub</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <div class="mt-auto">
+            <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+            <a
+               [class]="favoritosMainLinkClass() + ' m-3'"
+               style="border-radius: 12px"
+            >
+               <img
+                  src="assets/user.png"
+                  class="mr-2"
+                  style="width: 28px; height: 28px"
+               />
+               <span class="font-medium">Amy Elsner</span>
+            </a>
+         </div>
+      </div>
+   </div>
+
+   <!-- ============================ barra superior ============================ -->
+   <div class="min-h-screen flex flex-column relative flex-auto">
+      <!-- BOTONES EN MOVIL -->
+      <div
+         class="flex justify-content-between align-items-center px-5 surface-0 border-bottom-1 surface-border relative lg:static"
+         style="height: 60px"
+      >
+         <!-- BOTON MENU MOVIL - - -  -->
+         <!-- p' esconder solo falta que vuelva a poner el hidden -->
+         <a
+            class="cursor-pointer inline-flex align-items-center justify-content-center lg:hidden text-700 mr-3"
+            pStyleClass="#app-sidebar-11"
+            enterClass="hidden"
+            enterActiveClass="fadeinleft"
+            leaveToClass="hidden"
+            leaveActiveClass="fadeoutleft"
+            [hideOnOutsideClick]="true"
+         >
+            <i class="pi pi-bars text-4xl"></i>
+         </a>
+         <!-- BOTON MENU MOVIL ... -->
+         <a
+            class="cursor-pointer block lg:hidden text-700"
+            pStyleClass="@next"
+            enterClass="hidden"
+            enterActiveClass="fadein"
+            leaveToClass="hidden"
+            leaveActiveClass="fadeout"
+            [hideOnEscape]="true"
+            [hideOnOutsideClick]="true"
+         >
+            <i class="pi pi-ellipsis-v text-2xl"></i>
+         </a>
+
+         <!-- MENU SUPERIOR O EN MOVIL DENTRO DE ... -->
+         <ul
+            class="list-none p-0 m-0 hidden lg:flex lg:align-items-center select-none lg:flex-row w-auto lg:w-full surface-section border-1 lg:border-none surface-border right-0 top-100 z-1 shadow-2 lg:shadow-none absolute lg:static"
+         >
+            <li>
+               <a [class]="topMenuInboxNotification()">
+                  <i class="pi pi-inbox text-base lg:text-2xl mr-2 lg:mr-0"></i>
+                  <span class="block lg:hidden font-medium">Inbox</span>
+               </a>
+            </li>
+            <li>
+               <a [class]="topMenuInboxNotification()">
+                  <i
+                     class="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0"
+                     pBadge
+                     severity="danger"
+                     value="2"
+                  ></i>
+                  <span class="block lg:hidden font-medium">Notifications</span>
+               </a>
+            </li>
+            <li>
+               <a [class]="topMenuOthers()">
+                  <i class="pi pi-cog text-base lg:text-2xl mr-2 lg:mr-0"></i>
+                  <span class="block lg:hidden font-medium">Settings</span>
+               </a>
+            </li>
+            <li>
+               <a [class]="topMenuOthers()">
+                  <i class="pi pi-user text-base lg:text-2xl mr-2 lg:mr-0"></i>
+                  <span class="block lg:hidden font-medium">Profile</span>
+               </a>
+            </li>
+            <li>
+               <a [class]="topMenuOthers()">
+                  <i class="pi pi-star text-base lg:text-2xl mr-2 lg:mr-0"></i>
+                  <span class="block lg:hidden font-medium">Favorites</span>
+               </a>
+            </li>
+            <li>
+               <a [class]="topMenuOthers()">
+                  <i
+                     class="pi pi-pencil text-base lg:text-2xl mr-2 lg:mr-0"
+                  ></i>
+                  <span class="block lg:hidden font-medium">Edit</span>
+               </a>
+            </li>
+
+            <!-- forms -->
+            <div class="flex p-3 lg:px-3 lg:py-2 align-items-center">
+               <app-text-input
+                  [formControl]="$any(loginForm.controls['userName'])"
+                  [label]="'User Name'"
+               ></app-text-input>
+            </div>
+
+            <div class="ml-2">
+               <app-text-input
+                  [formControl]="$any(loginForm.controls['password'])"
+                  [label]="'Password'"
+               ></app-text-input>
+            </div>
+
+            <li class="border-top-1 surface-border lg:border-top-none ml-auto">
+               <a
+                  class="flex p-3 lg:px-3 lg:py-2 align-items-center hover:surface-100 font-medium border-round cursor-pointer transition-duration-150 transition-colors"
+               >
+                  <img
+                     src="assets/user.png"
+                     class="mr-3 lg:mr-0"
+                     style="width: 32px; height: 32px"
+                  />
+                  <div class="block lg:hidden">
+                     <div class="text-900 font-medium">Josephine Lillard</div>
+                     <span class="text-600 font-medium text-sm"
+                        >Marketing Specialist</span
+                     >
+                  </div>
+               </a>
+            </li>
+         </ul>
+      </div>
+
+      <!--        CONTENIDO       -->
+      <div class="p-5 flex flex-column flex-auto">
+         <div
+            class="border-2 border-dashed surface-border border-round surface-section flex-auto"
+         >
+            <ng-content></ng-content>
+         </div>
+      </div>
+   </div>
+</div>

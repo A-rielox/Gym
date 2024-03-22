@@ -1,4 +1,5 @@
 <div class="min-h-screen flex surface-ground">
+   <!-- SIDENAV -->
    <div
       id="app-sidebar-13"
       class="surface-section h-screen hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none"
@@ -16,7 +17,7 @@
             <ul class="list-none p-0 m-0">
                <li>
                   <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
+                     [class]="sideNavLinkClass()"
                      style="border-radius: 12px"
                      routerLink="/"
                      routerLinkActive="active"
@@ -28,7 +29,7 @@
                </li>
                <li>
                   <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
+                     [class]="sideNavLinkClass()"
                      style="border-radius: 12px"
                      routerLink="/clases"
                      routerLinkActive="active"
@@ -38,29 +39,20 @@
                   </a>
                </li>
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-users mr-2"></i>
                      <span class="font-medium">Team</span>
                   </a>
                </li>
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-comments mr-2"></i>
                      <span class="font-medium">Messages</span>
                      <p-badge value="5" class="ml-auto"></p-badge>
                   </a>
                </li>
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-calendar mr-2"></i>
                      <span class="font-medium">Calendar</span>
                   </a>
@@ -71,28 +63,19 @@
 
             <ul class="list-none p-0 m-0">
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-discord mr-2"></i>
                      <span class="font-medium">Discord</span>
                   </a>
                </li>
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-slack mr-2"></i>
                      <span class="font-medium">Slack</span>
                   </a>
                </li>
                <li>
-                  <a
-                     class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:surface-hover transition-duration-150 transition-colors"
-                     style="border-radius: 12px"
-                  >
+                  <a [class]="sideNavLinkClass()" style="border-radius: 12px">
                      <i class="pi pi-github mr-2"></i>
                      <span class="font-medium">GitHub</span>
                   </a>
@@ -103,32 +86,25 @@
          <div
             class="border-top-1 surface-border p-3 flex justify-content-center column-gap-5"
          >
-            <a
-               class="cursor-pointer text-purple-500 inline-flex align-items-center justify-content-center hover:surface-100 transition-colors transition-duration-150 w-3rem h-3rem border-circle"
-            >
+            <a [class]="sideNavFooterIconsClass() + ' text-purple-500'">
                <i class="pi pi-chart-pie text-3xl"></i>
             </a>
-            <a
-               class="cursor-pointer text-orange-500 inline-flex align-items-center justify-content-center hover:surface-100 transition-colors transition-duration-150 w-3rem h-3rem border-circle"
-            >
+            <a [class]="sideNavFooterIconsClass() + ' text-orange-500'">
                <i class="pi pi-bolt text-3xl"></i>
             </a>
-            <a
-               class="cursor-pointer inline-flex align-items-center justify-content-center hover:surface-100 transition-colors transition-duration-150 w-3rem h-3rem border-circle"
-            >
-               <img
-                  src="assets/images/blocks/avatars/circle/avatar-f-1.png"
-                  style="width: 42px; height: 42px"
-               />
+            <a [class]="sideNavFooterIconsClass()">
+               <img src="assets/user.png" style="width: 42px; height: 42px" />
             </a>
          </div>
       </div>
    </div>
 
+   <!-- MAIN SPACE -->
    <div class="min-h-screen flex flex-column flex-auto surface-ground p-5">
       <div class="surface-card flex flex-column flex-auto border-round-xl p-5">
+         <!-- BARRA SUPERIOR -->
          <div
-            class="flex justify-content-between align-items-center relative lg:static mb-5 column-gap-5"
+            class="flex justify-content-between align-items-center relative lg:static mb-3 column-gap-5"
          >
             <div class="flex align-items-center">
                <button
@@ -142,8 +118,13 @@
                >
                   <i class="pi pi-bars text-4xl"></i>
                </button>
-               <div class="font-medium">
-                  Welcome back, <span class="font-bold">Christina!</span> 👋
+               <div
+                  class="font-medium"
+                  *ngIf="accountService.currentUser$ | async as user"
+               >
+                  Welcome back,
+                  <span class="font-bold">{{ user.knownAs | titlecase }} </span>
+                  👋
                </div>
             </div>
             <div>
@@ -158,6 +139,7 @@
                >
                   <i class="pi pi-ellipsis-v text-2xl"></i>
                </a>
+
                <ul
                   class="list-none p-3 lg:p-0 m-0 hidden lg:flex lg:align-items-center select-none lg:flex-row lg:border-round-none border-round-xl surface-overlay border-1 lg:border-none surface-border right-0 top-100 z-1 shadow-2 lg:shadow-none absolute lg:static"
                >
@@ -174,25 +156,27 @@
                   </li> -->
 
                   <!-- forms -->
-                  <li>
+                  <form
+                     *ngIf="!(accountService.currentUser$ | async)"
+                     [formGroup]="loginForm"
+                     (ngSubmit)="loginForm.valid && login()"
+                     autocomplete="off"
+                     class="flex"
+                  >
                      <span class="p-input-icon-left lg:mr-3 mb-3 lg:mb-0">
                         <app-text-input
                            [formControl]="$any(loginForm.controls['userName'])"
                            [label]="'User Name'"
                         ></app-text-input>
                      </span>
-                  </li>
 
-                  <li>
                      <span class="p-input-icon-left lg:mr-3 mb-3 lg:mb-0">
                         <app-text-input
                            [formControl]="$any(loginForm.controls['password'])"
                            [label]="'Password'"
                         ></app-text-input>
                      </span>
-                  </li>
 
-                  <li>
                      <button
                         class="border-round-3xl white-space-nowrap w-full lg:w-auto"
                         iconPos="right"
@@ -200,11 +184,60 @@
                         icon="pi pi-sign-in"
                         label="Ingresar"
                      ></button>
+                  </form>
+
+                  <!-- FOTO -->
+                  <li
+                     *ngIf="accountService.currentUser$ | async as user"
+                     class="hidden lg:block"
+                  >
+                     <a [class]="avatarClass()" (click)="menu.toggle($event)">
+                        <p-avatar
+                           image="{{
+                              user.photoUrl || '../../assets/user.png'
+                           }}"
+                           shape="circle"
+                           size="large"
+                           class="mr-0"
+                        ></p-avatar>
+
+                        <!-- <span>{{ user.knownAs | titlecase }}</span> -->
+                        <i class="pi pi-angle-down ml-auto lg:ml-3"></i>
+                     </a>
                   </li>
+
+                  <!-- dropdown -->
+                  <p-menu
+                     #menu
+                     [popup]="true"
+                     [model]="items"
+                     class=""
+                  ></p-menu>
+                  <!-- menu en pantalla chica -->
+                  <ng-container *ngIf="accountService.currentUser$ | async">
+                     <li class="block lg:hidden">
+                        <a
+                           [class]="avatarClass()"
+                           routerLink="/members/edit"
+                           routerLinkActive="active"
+                        >
+                           <i class="pi pi-cog mr-2"></i>
+                           <span class="font-medium">Editar Perfil</span>
+                        </a>
+                     </li>
+
+                     <li (click)="logout()" class="block lg:hidden">
+                        <a [class]="avatarClass()">
+                           <i class="pi pi-sign-out mr-2"></i>
+                           <span class="font-medium">Salir</span>
+                        </a>
+                     </li>
+                  </ng-container>
                </ul>
             </div>
          </div>
 
+         <!-- CONTENIDO -->
          <div
             class="border-2 border-dashed surface-border surface-50 flex-auto border-round-xl"
          >

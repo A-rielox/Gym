@@ -7,6 +7,8 @@ import { BadgeModule } from 'primeng/badge';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
+import { AvatarModule } from 'primeng/avatar';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
    declarations: [],
@@ -17,6 +19,8 @@ import { DividerModule } from 'primeng/divider';
       InputTextModule,
       ButtonModule,
       DividerModule,
+      AvatarModule,
+      MenuModule,
    ],
    exports: [
       StyleClassModule,
@@ -24,6 +28,8 @@ import { DividerModule } from 'primeng/divider';
       InputTextModule,
       ButtonModule,
       DividerModule,
+      AvatarModule,
+      MenuModule,
    ],
 })
 export class PrimeModule {}

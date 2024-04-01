@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './_shared/shared.module';
 import { PrimeModule } from './_prime/prime.module';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 @NgModule({
    declarations: [AppComponent],
@@ -20,7 +21,9 @@ import { PrimeModule } from './_prime/prime.module';
       SharedModule,
       PrimeModule,
    ],
-   providers: [],
+   providers: [
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+   ],
    bootstrap: [AppComponent],
 })
 export class AppModule {}

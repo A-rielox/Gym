@@ -1,3 +1,5 @@
+import { DaysEnum } from '../_enums/day.enum';
+
 export interface UserClass {
    classId: number;
    className: string;
@@ -5,7 +7,7 @@ export interface UserClass {
 }
 
 export interface ClassInfo {
-   dayName: string;
+   dayName: DaysEnum;
    hourName: number;
    sectorName: string;
 }

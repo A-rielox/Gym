@@ -38,7 +38,7 @@ public class ClassRepository : IClassRepository
         {
             ClassId = g.Key.classId,
             ClassName = g.Key.ClassName,
-            ClaseInfo = g.Select(g => new ClaseInfoDto
+            ClassInfo = g.Select(g => new ClaseInfoDto
             {
                 DayName = g.DayName,
                 HourName = g.HourName,

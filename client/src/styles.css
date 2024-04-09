@@ -8,3 +8,9 @@ body {
 
    margin: 0 8px;
 }
+
+.contenidooooo {
+   max-height: 100vh;
+   overflow: scroll;
+   overflow-x: hidden;
+}

@@ -5,5 +5,5 @@ public class UserClaseDto
     public int ClassId { get; set; }
     public string ClassName { get; set; }
 
-    public List<ClaseInfoDto> ClaseInfo { get; set; }
+    public List<ClaseInfoDto> ClassInfo { get; set; }
 }

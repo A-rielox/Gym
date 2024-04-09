@@ -32,17 +32,17 @@ public class ClassRepository : IClassRepository
             userClases = list.Read<UserClases>().ToList();
         }
 
-        var xd = userClases.GroupBy(uc => new { claseId = uc.ClaseId, claseNombre = uc.NombreClase } );
+        var xd = userClases.GroupBy(uc => new { classId = uc.ClassId, ClassName = uc.ClassName } );
 
         userClasesDto = xd.Select(g => new UserClaseDto
         {
-            ClaseId = g.Key.claseId,
-            ClaseNombre = g.Key.claseNombre,
+            ClassId = g.Key.classId,
+            ClassName = g.Key.ClassName,
             ClaseInfo = g.Select(g => new ClaseInfoDto
             {
-                NombreDia = g.NombreDia,
-                NombreHora = g.NombreHora,
-                NombreSector = g.NombreSector,
+                DayName = g.DayName,
+                HourName = g.HourName,
+                SectorName = g.SectorName,
             }).ToList()
         }).ToList();
 

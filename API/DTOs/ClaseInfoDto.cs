@@ -2,7 +2,7 @@
 
 public class ClaseInfoDto
 {
-    public string NombreDia { get; set; }
-    public int NombreHora { get; set; }
-    public string NombreSector { get; set; }
+    public string DayName { get; set; }
+    public int HourName { get; set; }
+    public string SectorName { get; set; }
 }

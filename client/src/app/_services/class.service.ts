@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { UserClasses } from '../_models/userClasses';
+import { UserClass } from '../_models/userClass';
 
 @Injectable({
    providedIn: 'root',
@@ -12,7 +12,7 @@ export class ClassService {
    constructor(private http: HttpClient) {}
 
    getUserClasses() {
-      return this.http.get<UserClasses>(this.baseUrl + 'class');
+      return this.http.get<UserClass[]>(this.baseUrl + 'class');
    }
 
    /*
@@ -39,46 +39,10 @@ export class ClassService {
          ]
       },
       {
-         "claseId": 3,
-         "claseNombre": "Zumba avanzado",
-         "claseInfo": [
-               {
-                  "nombreDia": "L",
-                  "nombreHora": 18,
-                  "nombreSector": "Piso 2 - B"
-               },
-               {
-                  "nombreDia": "X",
-                  "nombreHora": 18,
-                  "nombreSector": "Piso 2 - B"
-               },
-               {
-                  "nombreDia": "V",
-                  "nombreHora": 18,
-                  "nombreSector": "Piso 2 - B"
-               }
-         ]
+         "...
       },
       {
-         "claseId": 5,
-         "claseNombre": "Karate adultos intermedio",
-         "claseInfo": [
-               {
-                  "nombreDia": "M",
-                  "nombreHora": 20,
-                  "nombreSector": "Piso 2 - C"
-               },
-               {
-                  "nombreDia": "J",
-                  "nombreHora": 20,
-                  "nombreSector": "Piso 2 - C"
-               },
-               {
-                  "nombreDia": "S",
-                  "nombreHora": 20,
-                  "nombreSector": "Piso 2 - C"
-               }
-         ]
+         ...
       }
    ]
    */

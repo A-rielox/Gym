@@ -3,11 +3,11 @@
 public class UserClases
 {
     public int UserId { get; set; }
-    public int ClaseId { get; set; }
-    public string NombreClase { get; set; }
-    public string NombreDia { get; set; }
-    public int NombreHora { get; set; }
-    public string NombreSector { get; set; }
+    public int ClassId { get; set; }
+    public string ClassName { get; set; }
+    public string DayName { get; set; }
+    public int HourName { get; set; }
+    public string SectorName { get; set; }
 }
 
 /*
@@ -21,4 +21,20 @@ userId	nombre_clase	nombreDia	nombreHora	nombreSector
 2	Karate adultos intermedio	M	20	Piso 2 - C
 2	Karate adultos intermedio	J	20	Piso 2 - C
 2	Karate adultos intermedio	S	20	Piso 2 - C
+*/
+
+/*
+ export interface UserClasses {
+   classId: number;
+   className: string;
+   classInfo: ClassInfo[];
+}
+
+export interface ClassInfo {
+   dayName: string;
+   hourName: number;
+   sectorName: string;
+}
+
+ * 
 */

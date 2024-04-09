@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserClasses } from 'src/app/_models/userClasses';
+import { UserClass } from 'src/app/_models/userClass';
 import { ClassService } from 'src/app/_services/class.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ClassService } from 'src/app/_services/class.service';
    styleUrls: ['./clases.component.css'],
 })
 export class ClasesComponent implements OnInit {
-   classes?: UserClasses;
+   classes?: UserClass[];
 
    constructor(private classService: ClassService) {}
 

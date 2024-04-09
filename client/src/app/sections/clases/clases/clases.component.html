@@ -1,1 +1,9 @@
-<p>clases works!</p>
+<div>hola</div>
+
+<div *ngIf="classes">
+   <ul>
+      <li *ngFor="let class of classes">
+         {{ class.className }}
+      </li>
+   </ul>
+</div>
